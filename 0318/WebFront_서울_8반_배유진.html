@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebFront_서울_8반_배유진</title>
+<style type="text/css">
+#menu img:hover {
+	opacity: 1;
+}
+
+#menu img:target {
+	opacity: 1;
+}
+
+#menu img {
+	opacity: 0.5;
+	margin-top: 20px;
+}
+
+#container {
+	background-color: #f2f2f2;
+	width: 800px;
+	padding: 20px;
+	border: 1px solid;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#random {
+	padding: 10px;
+	box-shadow: none;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous">
+	
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+		<button id="random">랜덤선택</button>
+
+		<h1 id="today">오늘의 메뉴</h1>
+
+		<div id="res">
+			<img id="pick" alt="케이크" src="../images/cake.jpg" height="300"
+				width="500">
+		</div>
+
+		<div id="menu">
+			<img id="cake" alt="케이크" src="../images/cake.jpg" height=100
+				width=150> <img id="burger" alt="햄버거"
+				src="../images/burger.jpg" height=100 width=150> <img
+				id="steak" alt="스테이크" src="../images/steak.jpg" height=100 width=150>
+			<img id="sandwich" alt="샌드위치" src="../images/sandwich.jpg" height=100
+				width=150>
+		</div>
+
+
+
+
+	</div>
+
+	<script type="text/javascript">
+		function cake() {
+
+			$("#res").html(function() {
+				return "<img src = \"../images/cake.jpg\" height = 300 width = 500>";
+			});
+
+			$("#today").html(function() {
+				return "오늘의 메뉴 : 케이크";
+
+			});
+		}
+
+		function burger() {
+			$("#res").html(function() {
+				return "<img src = \"../images/burger.jpg\" height = 300 width = 500>";
+			});
+
+			$("#today").html(function() {
+				return "오늘의 메뉴 : 햄버거";
+
+			});
+		}
+
+		function steak() {
+			$("#res").html( function() {
+				return "<img src = \"../images/steak.jpg\" height = 300 width = 500>";
+			});
+
+			$("#today").html(function() {
+				return "오늘의 메뉴 : 스테이크";
+			});
+		}
+
+		function sandwich() {
+			$("#res").html(function() {
+				return "<img src = \"../images/sandwich.jpg\" height = 300 width = 500>";
+			});
+			$("#today").html(function() {
+				return "오늘의 메뉴 : 샌드위치";
+
+			});
+		}
+
+		$("#cake").on("click", cake);
+		$("#burger").on("click", burger);
+		$("#steak").on("click", steak);
+		$("#sandwich").on("click", sandwich);
+
+		$("#random").on("click", function() {
+
+			var res = Math.floor(Math.random() * 4) + 1;
+			console.log("random");
+			
+			switch (res) {
+			case 1:
+				console.log("burger");
+				burger();
+				break;
+
+			case 2:
+				console.log("steak");
+				steak();
+				break;
+			case 3:
+				console.log("sandwich");
+				sandwich();
+				break;
+			case 4:
+				console.log("cake");
+				cake();
+				break;
+
+			}
+		});
+	</script>
+</body>
+</html>
